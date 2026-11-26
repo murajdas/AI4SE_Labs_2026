@@ -1,0 +1,93 @@
+{
+  "_createdBy": "AI assistant using Copilot SDK in VS Code",
+  "_model": "not exposed by this session",
+  "_description": "Assistant-generated inventory only; the native workspace configuration files are listed in README.md.",
+  "assistant": "GitHub Copilot in VS Code",
+  "sensitiveData": {
+    "notes": "No API key or credential was found in the exported workspace configuration."
+  },
+  "repositoryInstructions": [
+    {
+      "path": ".github/copilot-instructions.md",
+      "content": [
+        "When creating a file, add concise creator metadata near the top identifying the agent and model that created it.",
+        "If the exact model is not exposed, state \"Model: not exposed by this session\"."
+      ]
+    },
+    {
+      "path": "AGENTS.md",
+      "content": [
+        "This repository contains educational assignments, primarily as Markdown files.",
+        "Treat each assignment prompt as the source of truth.",
+        "Put assignment deliverables in the corresponding task directory.",
+        "Keep reports concise.",
+        "Do not invent project commands or tests."
+      ]
+    },
+    {
+      "path": "Assignments/AGENTS.md",
+      "content": [
+        "Write requested reports in concise English unless the assignment specifies another language."
+      ]
+    }
+  ],
+  "promptFile": {
+    "path": ".github/prompts/review.prompt.md",
+    "description": "Review the current code changes for actionable correctness issues.",
+    "behavior": [
+      "Inspect the diff and relevant surrounding code or tests.",
+      "Report only actionable issues supported by evidence.",
+      "Include file, line, and concise explanation for findings.",
+      "Do not modify files."
+    ]
+  },
+  "profileAlternative": {
+    "path": ".github/agents/assignment-coach.agent.md",
+    "name": "Assignment Coach",
+    "description": "Guide me through programming assignments with hints and explanations instead of completing them for me.",
+    "tools": [
+      "read",
+      "search"
+    ],
+    "behavior": [
+      "Ask what the user tried when context is unclear.",
+      "Suggest a small hint before a full solution.",
+      "Do not edit files or run commands.",
+      "Keep explanations concise."
+    ]
+  },
+  "skill": {
+    "path": ".github/skills/assignment-report-checker/SKILL.md",
+    "name": "assignment-report-checker",
+    "description": "Check an assignment report against its prompt and point out missing requirements or unsupported claims.",
+    "behavior": [
+      "Read the assignment prompt and report.",
+      "Treat the prompt as the source of truth.",
+      "Identify missing requirements and unsupported claims.",
+      "Do not rewrite or edit reports unless explicitly asked."
+    ]
+  },
+  "mcpServers": {
+    "task7-local": {
+      "path": ".vscode/mcp.json",
+      "type": "stdio",
+      "command": "python",
+      "args": [
+        "${workspaceFolder}\\Assignments\\Task_7\\server.py"
+      ],
+      "tool": "greet"
+    }
+  },
+  "rule": {
+    "path": ".github/copilot-instructions.md",
+    "summary": "Every generated file must include concise creator and model metadata.",
+    "fallbackModelText": "Model: not exposed by this session"
+  },
+  "nativeConfigurationFiles": [
+    ".vscode/mcp.json",
+    ".github/copilot-instructions.md",
+    ".github/agents/assignment-coach.agent.md",
+    ".github/prompts/review.prompt.md",
+    ".github/skills/assignment-report-checker/SKILL.md"
+  ]
+}

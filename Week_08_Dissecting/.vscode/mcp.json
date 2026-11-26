@@ -1,0 +1,11 @@
+{
+  "servers": {
+    "task7-local": {
+      "type": "stdio",
+      "command": "python",
+      "args": [
+        "${workspaceFolder}\\Assignments\\Task_7\\server.py"
+      ]
+    }
+  }
+}
